@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Customs\**" />
+    <EmbeddedResource Remove="Customs\**" />
+    <None Remove="Customs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\1544978804.svg" />
+    <None Remove="Resources\Images\NewsArrow\news_arrow_left.svg" />
+    <None Remove="Resources\Images\NewsArrow\news_arrow_right.svg" />
+    <None Remove="Resources\Images\Settings\akkount.svg" />
+    <None Remove="Resources\Images\Settings\kontakti.svg" />
+    <None Remove="Resources\Images\Settings\lgoti.svg" />
+    <None Remove="Resources\Images\Settings\licevoi_schet.svg" />
+    <None Remove="Resources\Images\Settings\schetchiki.svg" />
+    <None Remove="Resources\Images\Settings\statistika.svg" />
+    <None Remove="Resources\Images\Settings\tarifi.svg" />
+    <None Remove="Resources\Images\Staff\toolbar_back_arrow.svg" />
+    <None Remove="Resources\Images\Toolbar\eshe_select_no.png" />
+    <None Remove="Resources\Images\Toolbar\eshe_select_no.svg" />
+    <None Remove="Resources\Images\Toolbar\main_select_yes.png" />
+    <None Remove="Resources\Images\Toolbar\main_select_yes.svg" />
+    <None Remove="Resources\Images\Toolbar\news_select_no.png" />
+    <None Remove="Resources\Images\Toolbar\news_select_no.svg" />
+    <None Remove="Resources\Images\Toolbar\operation_select_no.png" />
+    <None Remove="Resources\Images\Toolbar\operation_select_no.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images\1544978804.svg" />
+    <EmbeddedResource Include="Resources\Images\NewsArrow\news_arrow_left.svg" />
+    <EmbeddedResource Include="Resources\Images\NewsArrow\news_arrow_right.svg" />
+    <EmbeddedResource Include="Resources\Images\Settings\akkount.svg" />
+    <EmbeddedResource Include="Resources\Images\Settings\kontakti.svg" />
+    <EmbeddedResource Include="Resources\Images\Settings\lgoti.svg" />
+    <EmbeddedResource Include="Resources\Images\Settings\licevoi_schet.svg" />
+    <EmbeddedResource Include="Resources\Images\Settings\schetchiki.svg" />
+    <EmbeddedResource Include="Resources\Images\Settings\statistika.svg" />
+    <EmbeddedResource Include="Resources\Images\Settings\tarifi.svg" />
+    <EmbeddedResource Include="Resources\Images\Staff\toolbar_back_arrow.svg" />
+    <EmbeddedResource Include="Resources\Images\Toolbar\eshe_select_no.png" />
+    <EmbeddedResource Include="Resources\Images\Toolbar\eshe_select_no.svg" />
+    <EmbeddedResource Include="Resources\Images\Toolbar\main_select_yes.png" />
+    <EmbeddedResource Include="Resources\Images\Toolbar\main_select_yes.svg" />
+    <EmbeddedResource Include="Resources\Images\Toolbar\news_select_no.png" />
+    <EmbeddedResource Include="Resources\Images\Toolbar\news_select_no.svg" />
+    <EmbeddedResource Include="Resources\Images\Toolbar\operation_select_no.png" />
+    <EmbeddedResource Include="Resources\Images\Toolbar\operation_select_no.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.462" />
+    <PackageReference Include="Microsoft.AppCenter" Version="3.4.3" />
+    <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.4.3" />
+    <PackageReference Include="Microsoft.AppCenter.Crashes" Version="3.4.3" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.6" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.9.961" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.9.961" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.9.961" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1560" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Delphin.DAL\Delphin.DAL.csproj" />
+  </ItemGroup>
+</Project>

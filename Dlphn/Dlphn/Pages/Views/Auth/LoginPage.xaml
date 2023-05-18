@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Dlphn.Pages.ViewModels.Auth"
+             xmlns:constString ="clr-namespace:Dlphn.Constants"
+             xmlns:behaviors ="clr-namespace:Dlphn.Staff.Behaviors"
+             x:Class="Dlphn.Pages.Views.Auth.LoginPage"
+             Style="{StaticResource stlViewAuthMain}">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{x:Static constString:Login.header}"
+                   Style="{StaticResource stlAuthLblHeader}"/>
+
+            <Label Text="{x:Static constString:Login.lblEntryHeaderInputLogin}"
+                   Style="{StaticResource stlAuthEntrHeader}"/>
+            <Entry
+                Placeholder="{x:Static constString:Login.entrPlaceholderInputLogin}"
+                Text="{Binding StrUserData}"
+                Style="{StaticResource stlAuthEntryInputPhone}">
+                <Entry.Behaviors>
+                    <behaviors:EntryPhone/>
+                </Entry.Behaviors>
+            </Entry>
+            
+            <Label Text="{x:Static constString:Login.lblEntryHeaderPassword}"
+                   Style="{StaticResource stlAuthEntrHeader}"/>
+            <Entry
+                Style="{StaticResource stlAuthEntryPassword}"
+                Placeholder="{x:Static constString:Login.entrPlaceholderPassword}"
+                Text="{Binding StrPassword}">
+                <Entry.Behaviors>
+                    <behaviors:EntryPhone/>
+                </Entry.Behaviors>
+            </Entry>
+
+            <Button
+                Text="{x:Static constString:Login.btnInput}"
+                Command="{Binding CmdLogin}"/>
+            <!--<Label Text="{x:Static constString:Login.lblForgotPassword}"
+                   Style="{StaticResource stlAuthWarning}"/>-->
+
+            <ActivityIndicator
+                IsRunning="{Binding IsBusy}"/>
+
+            <!--<Label Text="{x:Static constString:Login.lblInputByPhone}"
+                   Style="{StaticResource stlAuthLblFooter}"/>-->
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

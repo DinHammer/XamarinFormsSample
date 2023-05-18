@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"       
+       xmlns:pgAuth="clr-namespace:Dlphn.Pages.Views.Auth"
+       xmlns:pgMain="clr-namespace:Dlphn.Pages.Views.Main"
+       xmlns:pgHistory="clr-namespace:Dlphn.Pages.Views.History"
+       xmlns:pgNews ="clr-namespace:Dlphn.Pages.Views.News"
+       xmlns:pgYet ="clr-namespace:Dlphn.Pages.Views.Yet"
+       xmlns:pgTmp ="clr-namespace:Dlphn.Pages.Views.Tmp"       
+       xmlns:constString ="clr-namespace:Dlphn.Constants"
+       Title="Dlphn"
+       x:Class="Dlphn.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource BackgroundGrey}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="White" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource Key=ColorGrey}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource Key=ColorBlue}"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Route="LoadingPage" ContentTemplate="{DataTemplate pgTmp:LoadingPage}"/>
+    </TabBar>
+    
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate pgAuth:LoginPage}"/>
+    </TabBar>
+    
+    <TabBar>
+        <ShellContent Route="InputPhonePage" ContentTemplate="{DataTemplate pgAuth:InputPhonePage}"/>
+    </TabBar>
+
+    <TabBar>
+        <ShellContent 
+            Title="{x:Static constString:TabBarNames.main}"             
+            Icon="tabBarMain.png"
+            Route="MainPage" ContentTemplate="{DataTemplate pgMain:MainPage }"/>
+        <ShellContent 
+            Title="{x:Static constString:TabBarNames.history}" 
+            Icon="tabBarHistory.png"
+            Route="HistoryPage" ContentTemplate="{DataTemplate pgHistory:HistoryPage}"/>
+        <ShellContent 
+            Title="{x:Static constString:TabBarNames.news}" 
+            Icon="tabBarNews.png"
+            Route="NewsPage" ContentTemplate="{DataTemplate pgNews:NewsPage}"/>
+        <ShellContent 
+            Title="{x:Static constString:TabBarNames.yet}" 
+            Icon="tabBarYet.png"
+            Route="YetPage" ContentTemplate="{DataTemplate pgYet:YetPage}"/>
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="TmpPage" ContentTemplate="{DataTemplate pgTmp:TmpPage}"/>
+    </TabBar>
+    
+    <!--<TabBar>
+        <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+    </TabBar>-->
+
+    <!--
+        If you would like to navigate to this content you can do so by calling
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+    <!--<TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>-->
+
+    
+
+
+</Shell>

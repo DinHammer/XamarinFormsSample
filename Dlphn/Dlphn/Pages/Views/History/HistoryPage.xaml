@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Dlphn.Pages.ViewModels.History"
+             xmlns:constString ="clr-namespace:Dlphn.Constants"
+             xmlns:tmpView ="clr-namespace:Dlphn.Pages.Views.Tmp"
+             x:Class="Dlphn.Pages.Views.History.HistoryPage"
+             Shell.BackgroundColor="White"
+             Style="{StaticResource stlViewBarNo}">
+
+    <ContentPage.BindingContext>
+        <vm:HistoryViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="btnTitle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundWhite}"/>
+                <Setter Property="TextColor" Value="{StaticResource ColorBlue}"/>
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <!--
+    <Shell.TitleView>
+        <StackLayout Orientation="Horizontal"
+                     Margin="20,0,20,0">
+            <Button 
+                Style="{StaticResource btnTitle}"
+                Text="{x:Static constString:History.titleBtnAllOperation}"/>
+            <Button
+                Style="{StaticResource btnTitle}"
+                Text="{x:Static constString:History.titleBtnNachislenia}"/>
+            <Button
+                Style="{StaticResource btnTitle}"
+                Text="{x:Static constString:History.titleBtnOplata}"/>
+        </StackLayout>
+    </Shell.TitleView>
+    -->
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="{StaticResource BackgroundWhite}">
+                <Button 
+                Style="{StaticResource btnTitle}"
+                Text="{x:Static constString:History.titleBtnAllOperation}"
+                    Command="{Binding CmdAllOperations}"/>
+                <Button
+                Style="{StaticResource btnTitle}"
+                Text="{x:Static constString:History.titleBtnNachislenia}"
+                    Command="{Binding CmdAllCharges}"/>
+                <Button
+                Style="{StaticResource btnTitle}"
+                Text="{x:Static constString:History.titleBtnOplata}"
+                    Command="{Binding CmdPayments}"/>
+            </StackLayout>
+
+            <CollectionView
+                x:Name="collectionView"
+                Style="{StaticResource stlCollectionViewMain}"
+                ItemsSource="{Binding dataCollection}">
+                <CollectionView.EmptyView>
+                    <tmpView:ViewCollectionEmpty/>
+                </CollectionView.EmptyView>
+                
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

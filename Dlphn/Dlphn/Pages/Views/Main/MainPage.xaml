@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Dlphn.Pages.ViewModels.Main"
+             xmlns:constString ="clr-namespace:Dlphn.Constants"
+             xmlns:tmpView ="clr-namespace:Dlphn.Pages.Views.Tmp"
+             x:Class="Dlphn.Pages.Views.Main.MainPage"
+             Style="{StaticResource stlViewBarNo}">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView
+                x:Name="collectionView"
+                ItemsSource="{Binding dataCollection}">
+                <CollectionView.EmptyView>
+                    <tmpView:ViewCollectionEmpty/>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

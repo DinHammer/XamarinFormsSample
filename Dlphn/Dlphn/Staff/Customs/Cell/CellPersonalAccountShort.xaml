@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:constString ="clr-namespace:Dlphn.Constants"
+             x:Class="Dlphn.Staff.Customs.Cell.CellPersonalAccountShort">
+  <ContentView.Content>
+      <StackLayout 
+          Style="{StaticResource stlCellGeneral}">
+            <Label Text="{x:Static constString:CellPersonalAccountShort.title}"/>
+            <Label x:Name="lblName"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label 
+                    Text="{x:Static constString:CellPersonalAccountShort.ls}"
+                    Grid.Column="0" Grid.Row="0"/>
+                <Label 
+                    Text="{x:Static constString:CellPersonalAccountShort.balans}"
+                    Grid.Column="1" Grid.Row="0"/>
+                <Label 
+                    x:Name="lblPersonalAccount"
+                    Style="{StaticResource stlLblBlue}"
+                    Grid.Column="0" Grid.Row="1"/>
+                <Label 
+                    x:Name="lblBalance"
+                    Grid.Column="1" Grid.Row="1"/>
+            </Grid>
+            <StackLayout Orientation="Horizontal">
+                <Button 
+                    x:Name="btnSendData"
+                    Text="{x:Static constString:CellPersonalAccountShort.btnSendData}"
+                    HorizontalOptions="FillAndExpand"
+                    Style="{StaticResource btnBLue}"/>
+                <Button 
+                    x:Name="btnPay"
+                    Text="{x:Static constString:CellPersonalAccountShort.btnBuy}"
+                    HorizontalOptions="FillAndExpand"
+                    Style="{StaticResource btnGreen}"/>
+            </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

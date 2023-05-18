@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:constString ="clr-namespace:Dlphn.Constants"
+             x:Class="Dlphn.Staff.Customs.Cell.MeterHistory.CellMeterHistoryTitle">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="stlCellThis" TargetType="Grid">
+
+                <Setter Property="Padding" Value="{StaticResource PaddingLeftUpRightDown}"/>
+                <Setter Property="Margin" Value="{StaticResource MarginLeftRight}"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+        <Grid
+            Style="{StaticResource stlCellThis}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="imgMeter"
+                   Margin="5"
+                   Grid.Row="0" Grid.Column="0"/>
+            <Label x:Name="lblMeterName"
+                   Style="{StaticResource stlLblBlueBig}"
+                   Grid.Row="0" Grid.Column="1"/>
+            <Label x:Name="lblMeterNumber"
+                   Grid.Row="1" Grid.Column="1"/>
+            <Label Text="{x:Static constString:MeterHistory.str_date}"
+                   Style="{StaticResource stlLblBlue}"
+                   Grid.Row="2" Grid.Column="0"/>
+            <Label Text="{x:Static constString:MeterHistory.str_value}"
+                   Style="{StaticResource stlLblBlue}"
+                   HorizontalTextAlignment="End"
+                   Grid.Row="2" Grid.Column="2"/>
+            <BoxView HeightRequest="1" Color="Gray"
+                Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+        </Grid>
+  </ContentView.Content>
+</ContentView>

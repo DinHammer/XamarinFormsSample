@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Dlphn.Pages.ViewModels.Yet"
+             xmlns:constString ="clr-namespace:Dlphn.Constants"
+             xmlns:tmpView ="clr-namespace:Dlphn.Pages.Views.Tmp"
+             x:Class="Dlphn.Pages.Views.Yet.MeterHistoryPage"
+             Style="{StaticResource stlViewStaff}">
+
+    <ContentPage.BindingContext>
+        <vm:MeterHistoryViewModel/>
+    </ContentPage.BindingContext>
+
+
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="{StaticResource BackgroundGrey}">
+            <CollectionView
+                x:Name="collectionView"
+                BackgroundColor="Transparent"
+                ItemsSource="{Binding dataCollection}">
+                <CollectionView.EmptyView>
+                    <tmpView:ViewCollectionEmpty/>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

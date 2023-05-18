@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dlphn.Staff.Customs.Cell.CellYet">
+  <ContentView.Content>
+        <StackLayout Orientation="Horizontal"
+                   BackgroundColor="{StaticResource BackgroundWhite}"
+                   Padding="12"
+                   Spacing="12"
+                     Margin="8,4,8,4">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer x:Name="tapGesture"/>
+            </StackLayout.GestureRecognizers>
+            <Image x:Name="img"/>
+            <Label x:Name="lbl"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Dlphn.Pages.ViewModels.Tmp"
+             xmlns:controls="clr-namespace:Dlphn.Staff.Customs.Controls"
+             x:Class="Dlphn.Pages.Views.Tmp.TmpPage">
+
+    <ContentPage.BindingContext>
+        <vm:TmpViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="Center">
+            <Button
+                Text="Button1"
+                Command="{Binding CmdBtn1}"/>
+            <Button
+                Text="Button2"
+                Command="{Binding CmdBtn2}"/>
+        </StackLayout>
+        <!--
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <controls:MgcFrame 
+                Grid.Row="0"
+                Grid.Column="0"
+            Margin="30"
+                HasShadow="False"
+            CornerRadius="30,30,0,0">
+                <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </controls:MgcFrame>
+
+            <controls:MgcFrame 
+                Grid.Row="1"
+                Grid.Column="0"
+            Margin="30"
+            CornerRadius="0,0,30,30">
+                <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            </controls:MgcFrame>
+        </Grid>
+-->
+        
+        
+
+    </ContentPage.Content>
+</ContentPage>

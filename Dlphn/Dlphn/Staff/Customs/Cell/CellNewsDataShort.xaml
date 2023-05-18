@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dlphn.Staff.Customs.Cell.CellNewsDataShort">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="stlViewLocal" TargetType="StackLayout" BasedOn="{StaticResource stlMargin}">
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Spacing" Value="1"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+      <StackLayout Style="{StaticResource stlViewLocal}">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer x:Name="tap"/>
+            </StackLayout.GestureRecognizers>
+          <Label x:Name="lblDate"
+                 Style="{StaticResource stlLblBlue}"/>
+            <Label x:Name="lblText"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:constString ="clr-namespace:Dlphn.Constants"
+             x:Class="Dlphn.Staff.Customs.Cell.PersonalAccount.CellPersonalAccountRegisterResidentHeader">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="stlCellThis" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundWhite}"/>
+                <Setter Property="Padding" Value="{StaticResource PaddingLeftUpRightDown}"/>
+                <Setter Property="Margin" Value="{StaticResource MarginLeftRight}"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+      <StackLayout
+          Style="{StaticResource stlCellThis}">
+          <Label Text="{x:Static constString:PersonalAccount.str_registered_residents}" 
+                 Style="{StaticResource stlLblBig}"/>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dlphn.Staff.Customs.Cell.CellNewsTitle">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="stlViewLocal" TargetType="StackLayout" BasedOn="{StaticResource stlMargin}">
+                <Setter Property="Padding" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    
+  <ContentView.Content>
+      <StackLayout Style="{StaticResource stlViewLocal}">
+          <Label x:Name="lblTitle"/>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

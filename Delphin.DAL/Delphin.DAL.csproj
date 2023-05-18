@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ServiceData\Moq\**" />
+    <EmbeddedResource Remove="ServiceData\Moq\**" />
+    <None Remove="ServiceData\Moq\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Delphin.Abstraction\Delphin.Abstraction.csproj" />
+  </ItemGroup>
+
+</Project>

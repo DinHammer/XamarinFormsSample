@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dlphn.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BackgroundGrey">#E5E5E5</Color>
+            <Color x:Key="BackgroundWhite">#FFFFFF</Color>
+            <Color x:Key="ColorBlue">#5CBBFF</Color>
+            <Color x:Key="ColorGreen">#4ABB85</Color>
+            <Color x:Key="ColorRed">#E96F5F</Color>
+            <Color x:Key="ColorDarkBLue">#3F515F</Color>
+            <Color x:Key="ColorGrey">#B8B8B8</Color>
+                <Thickness x:Key="MarginLeftRight">8,0,8,0</Thickness>
+            <Thickness x:Key="MarginLeftUpRight">8,8,8,0</Thickness>
+            <Thickness x:Key="PaddingLeftRight">16,0,16,0</Thickness>
+            <Thickness x:Key="PaddingLeftUpRight">16,8,16,0</Thickness>
+            <Thickness x:Key="PaddingLeftRightDown">16,0,16,8</Thickness>
+            <Thickness x:Key="PaddingLeftUpRightDown">16,8,16,8</Thickness>
+            
+            
+            
+            <Color x:Key="Primary">#2196F3</Color>
+            <!--
+            <Color x:Key="Primary">#2196F3</Color>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+            -->
+            
+            
+            <Style x:Key="stlViewAuthMain" TargetType="ContentPage">
+                <Setter Property="Shell.NavBarIsVisible" Value="False"/>
+                <Setter Property="Padding" Value="16, 100, 16, 16"/>
+            </Style>
+            <Style x:Key="stlViewAuthStaff" TargetType="ContentPage">
+                <Setter Property="Padding" Value="16, 100, 16, 16"/>
+            </Style>
+
+            <Style x:Key="stlViewBarYes" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundGrey}"/>
+            </Style>
+            <Style x:Key="stlViewBarNo" TargetType="ContentPage" BasedOn="{StaticResource stlViewBarYes}">
+                <Setter Property="Shell.NavBarIsVisible" Value="False"/>
+            </Style>
+            <Style x:Key="stlViewStaff" TargetType="ContentPage">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource ColorDarkBLue}"/>
+                <Setter Property="Shell.TabBarIsVisible" Value="False"/>
+            </Style>
+            
+            
+            <Style x:Key="stlCellNewHot" TargetType="ContentView">
+                <Setter Property="BackgroundColor" Value="Gray"/>
+            </Style>
+
+
+
+            <Style x:Key="stlCellBase" TargetType="StackLayout">
+                <Setter Property="Padding" Value="16, 0, 16, 0"/>
+                <Setter Property="Margin" Value="8, 0,8,0"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundWhite}"/>
+            </Style>
+
+
+
+            <Style x:Key="stlMargin" TargetType="StackLayout">
+                <Setter Property="Margin" Value="{StaticResource MarginLeftRight}"/>
+            </Style>
+            <Style x:Key="stlCellGeneral" TargetType="StackLayout">
+                <Setter Property="Padding" Value="16, 12, 16, 12"/>
+                <Setter Property="Margin" Value="8, 0,8,0"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundWhite}"/>
+            </Style>
+            <Style x:Key="stlCellNewsShort" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundWhite}"/>
+                <Setter Property="Margin" Value="8,0,8,0"/>
+                <Setter Property="Padding" Value="16,12,16,12"/>
+            </Style>
+            <Style x:Key="stlCellHistory" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundWhite}"/>
+                <Setter Property="Padding" Value="16,12,16,12"/>
+            </Style>
+
+            <Style x:Key="stlCollectionViewMain" TargetType="CollectionView">
+                <Setter Property="Margin" Value="8,8,8,0"/>
+            </Style>
+
+
+            <Style x:Key="stlAuthLblHeader" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+            </Style>
+            <Style x:Key="stlAuthLblFooter" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+            </Style>
+            <Style x:Key="stlAuthEntrHeader" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="FontSize" Value="Micro"/>
+            </Style>
+            <Style x:Key="stlAuthWarning" TargetType="Label">
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="sltLblCellNewHot" TargetType="Label">
+                <Setter Property="Margin" Value="18,8,18,8"/>
+            </Style>
+            <Style x:Key="stlLblBlue" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorBlue}"/>
+            </Style>
+            <Style x:Key="stlLblBlueBig" TargetType="Label"
+                   BasedOn="{StaticResource stlLblBlue}">
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+            <Style x:Key="stlLblGreen" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorGreen}"/>
+            </Style>
+            <Style x:Key="stlLblRed" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ColorRed}"/>
+            </Style>
+            <Style x:Key="stlLblBold" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="stlLblBlueBold" TargetType="Label"
+                   BasedOn="{StaticResource stlLblBlue}">
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Style x:Key="stlLblBoldBig" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+            <Style x:Key="stlLblBig" TargetType="Label">
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+
+
+            <Style x:Key="stlAuthEntryInputPhone" TargetType="Entry">
+                <Setter Property="Keyboard" Value="Telephone"/>
+                <Setter Property="CursorPosition" Value="1"/>
+            </Style>
+            <Style x:Key="stlAuthEntryPassword" TargetType="Entry">
+                <Setter Property="IsPassword" Value="True"/>
+            </Style>
+
+            
+            <Style x:Key="stlActivityIndicator" TargetType="ActivityIndicator">
+                <Setter Property="Color" Value="Blue"/>
+            </Style>
+
+            
+            <Style x:Key="btnBLue" TargetType="Button">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorBlue}"/>
+            </Style>
+            <Style x:Key="btnGreen" TargetType="Button">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorGreen}"/>
+            </Style>
+
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>

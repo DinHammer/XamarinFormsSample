@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customs="clr-namespace:Dlphn.Staff.Customs.Controls"
+             x:Class="Dlphn.Staff.Customs.Cell.CellMeterEnergyData">
+  <ContentView.Content>
+      <StackLayout>
+            <Label Text="Электроэнергия"/>
+            <Label Text="Hello Xamarin.Forms!" />
+            <customs:MeterDataView x:Name="meterData"/>
+            
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

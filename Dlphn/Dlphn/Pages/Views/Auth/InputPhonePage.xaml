@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Dlphn.Pages.ViewModels.Auth"
+             xmlns:constString ="clr-namespace:Dlphn.Constants"
+             xmlns:behaviors ="clr-namespace:Dlphn.Staff.Behaviors"
+             x:Class="Dlphn.Pages.Views.Auth.InputPhonePage"
+             Style="{StaticResource stlViewAuthMain}">
+
+    <ContentPage.BindingContext>
+        <vm:InputPhoneViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{x:Static constString:AuthByPhoneNumber.header}"
+                   Style="{StaticResource stlAuthLblHeader}"/>
+            <Label Text="{x:Static constString:AuthByPhoneNumber.lblPhone}"
+                   Style="{StaticResource stlAuthEntrHeader}"
+                   Margin="0,52,0,0"/>
+            <Entry
+                x:Name="entryPhone"
+                CursorPosition="1"
+                Keyboard="Telephone"                
+                Placeholder="{x:Static constString:AuthByPhoneNumber.entrPlaceholder}"
+                Text="{Binding StrPhone}">
+                <Entry.Behaviors>
+                    <behaviors:EntryPhone/>
+                </Entry.Behaviors>
+            </Entry>
+            <Button
+                Text="{x:Static constString:AuthByPhoneNumber.btnSend}"
+                Command="{Binding CmdCheckCodeByPhone}"
+                VerticalOptions="Start"/>
+            <Label Text="{x:Static constString:AuthByPhoneNumber.lblAuthByloginAndPhone}"                   
+                   HorizontalOptions="Center"
+                   VerticalOptions="EndAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CmdInputLoginAndPassword}"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:constString ="clr-namespace:Dlphn.Constants"
+             x:Class="Dlphn.Staff.Customs.Cell.CellMeterDataSendNo">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="stlCellThis" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundWhite}"/>
+                <Setter Property="Padding" Value="{StaticResource PaddingLeftRightDown}"/>
+                <Setter Property="Margin" Value="{StaticResource MarginLeftRight}"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+      <StackLayout
+          Style="{StaticResource stlCellThis}">
+            <Label x:Name="lblTarifName"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Entry x:Name="entry" 
+                       Grid.Row="1" Grid.Column="0"
+                       VerticalOptions="CenterAndExpand"
+                       Placeholder="0.000"/>
+                <Label x:Name="lblUnitOfMeasurement" 
+                       Grid.Row="1" Grid.Column="1"
+                       Style="{StaticResource stlLblBold}"
+                       VerticalTextAlignment="Center"/>
+                
+            </Grid>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="{x:Static constString:ControlMeterData.lblFooter}" />
+                <Label x:Name="lblLastValue"
+                       Style="{StaticResource stlLblBold}"/>
+            </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
